@@ -22,7 +22,7 @@ namespace ZivotinjskaFarma
 
         #region PROPERTIES
 
-        public string IDKupca1 { get => IDKupca; set => IDKupca = "0"; }
+        public string IDKupca1 { get => IDKupca; set => IDKupca = value; }
         public DateTime DatumKupovine { get => datumKupovine; set => datumKupovine = value; }
         public DateTime RokIsporuke { get => datumKupovine; set => rokIsporuke = value; }
         public Proizvod KupljeniProizvod { get => kupljeniProizvod; set => kupljeniProizvod = value; }
