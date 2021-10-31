@@ -47,7 +47,11 @@ namespace ZivotinjskaFarma
         #endregion
 
         #region Metode
-
+        /* PRONADJEN BUG!
+            for petlja ne radi ništa i trebalo bi je obrisati.
+            return brojac++ efektivno ce vratiti isti broj, trebalo bi staviti prefiksni operator
+            da se vrati sljedeci broj.
+        */
         public static int DajSljedeciBroj()
         {
             for (int i = 0; i < 100; i++) ;

@@ -44,7 +44,13 @@ namespace ZivotinjskaFarma
             set
             {
                 if (value < 1 || value > 1)
-                    throw new ArgumentOutOfRangeException("Količina ne smije biti manja od 1!");
+                    throw new ArgumentOutOfRangeException("Količina ne smije biti manja od 1!"); 
+                /* PRONADJEN BUG!
+                    Izuzetak kaze da količina ne smije bit manja od 1 a ovaj izuzetak ce se baciti ukoliko je
+                    kolicina manja od 1 ILI veca od 1.
+                    Ispravka koja bi se trebala uraditi da bude konzistentno sa porukom je da se obrise 2. uslov 
+                    u if-u.
+                */
                 količina_na_stanju = value;
             }
         }

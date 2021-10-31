@@ -108,7 +108,12 @@ public bool KupovinaProizvoda(Proizvod p, DateTime rok, int količina)
 bool popust = Praznik(DateTime.Now);
 int id = Kupovina.DajSljedeciBroj();
 Kupovina kupovina = new Kupovina(id.ToString(), DateTime.Now, rok, p, količina, popust);
-if (true == false)
+/* PRONADJEN BUG!
+Uslov (true == false) neće nikada biti ispunjen, uvijek će se izvrsiti kupovine.Add(kupovina)
+Trebalo bi provjeriti da li se proizvod p nalazi u proizvodima i tek onda ako ga nema vratiti
+false inače se vraća true i tek onda dodaje u kupovine. I else je nepotrebno u ovom kodu
+*/
+if (true == false) 
 return false;
 else
 {
